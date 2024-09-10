@@ -1,4 +1,4 @@
-const DetailForm = () => {
+const DetailForm = ({handleChange, data}) => {
   return (
     <section className="w-full h-[402px] px-1 ">
       <div>
@@ -14,6 +14,8 @@ const DetailForm = () => {
               Name
             </label>
             <input
+              onChange={handleChange}
+              value={data.name}
               type="text"
               placeholder="Utkarsh Raj Mishra"
               name="name"
@@ -26,6 +28,8 @@ const DetailForm = () => {
               Email
             </label>
             <input
+              onChange={handleChange}
+              value={data.email}
               type="email"
               placeholder="utkarsh@gmail.com"
               name="email"
@@ -38,7 +42,9 @@ const DetailForm = () => {
               Phone Number
             </label>
             <input
+              onChange={handleChange}
               type="number"
+              value={data.phone}
               placeholder="7521859385"
               name="phone"
               id="phone"
@@ -50,7 +56,9 @@ const DetailForm = () => {
               Occupation
             </label>
             <input
+              onChange={handleChange}
               type="text"
+              value={data.occupation}
               placeholder="Frontend Developer"
               name="occupation"
               id="occupation"

@@ -1,4 +1,4 @@
-const PaymentForm = () => {
+const PaymentForm = ({handleChange, data}) => {
   return (
     <section className="w-full h-[402px] px-1">
       <div>
@@ -11,14 +11,16 @@ const PaymentForm = () => {
         </p>
         <form className="flex flex-col gap-4 mt-4">
           <div className="flex flex-col gap-1">
-            <label htmlFor="card-number" className="text-marineBlue">
+            <label htmlFor="cardNumber" className="text-marineBlue">
               Card Number
             </label>
             <input
+              onChange={handleChange}
               type="text"
+              value={data.cardNumber}
               placeholder="1234 5678 9012 3456"
-              name="card-number"
-              id="card-number"
+              name="cardNumber"
+              id="cardNumber"
               className="outline outline-1 outline-coolGray text-marineBlue rounded-md py-2 px-3"
             />
           </div>
@@ -28,7 +30,9 @@ const PaymentForm = () => {
                 Expiration Date
               </label>
               <input
+                onChange={handleChange}
                 type="text"
+                value={data.expiration}
                 placeholder="MM/YY"
                 name="expiration"
                 id="expiration"
@@ -40,6 +44,8 @@ const PaymentForm = () => {
                 CV Code
               </label>
               <input
+                value={data.cv}
+                onChange={handleChange}
                 type="text"
                 placeholder="123"
                 name="cv"
@@ -49,14 +55,16 @@ const PaymentForm = () => {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <label htmlFor="card-owner" className="text-marineBlue">
+            <label htmlFor="cardOwner" className="text-marineBlue">
               Card Owner
             </label>
             <input
+              onChange={handleChange}
+              value={data.cardOwner}
               type="text"
               placeholder="John Doe"
-              name="card-owner"
-              id="card-owner"
+              name="cardOwner"
+              id="cardOwner"
               className="outline outline-1 outline-coolGray text-marineBlue rounded-md py-2 px-3"
             />
           </div>
