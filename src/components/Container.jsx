@@ -3,6 +3,7 @@ import MobileImage from "../assets/bg-sidebar-mobile.svg";
 import Step from "./Step";
 import { Steps } from "../constants/Steps/Steps";
 import DetailForm from "./DetailForm";
+import AddressForm from "./AddressInfo";
 
 const Container = () => {
   return (
@@ -17,7 +18,7 @@ const Container = () => {
       </div>
 
       {/* Sidebar Image */}
-      <div className="hidden md:flex  h-full">
+      <div className="hidden md:flex w-[35%]  h-full">
         <img
           src={DesktopImage}
           alt="Sidebar Image"
@@ -26,8 +27,16 @@ const Container = () => {
       </div>
 
       {/* Detail Form Section */}
-      <div className="w-full md:w-1/2 md:ml-10 mt-8">
-        <DetailForm />
+      <div className=" p-8 w-[65%] flex flex-col gap-3 h-full">
+        <div className="flex-1">
+          {/* <DetailForm /> */}
+          <AddressForm/>
+        </div>
+        <div className="mt-auto flex justify-end p-4">
+          <button className="bg-purplishBlue text-white py-2 px-6  rounded">
+            Next
+          </button>
+        </div>
       </div>
     </section>
   );
