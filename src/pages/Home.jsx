@@ -1,4 +1,10 @@
+import Container from "../components/Container";
+
 const Home = () => {
-  return <h1>Home Component</h1>;
+  return (
+    <section className="h-[100vh] flex justify-center items-center bg-magnolia">
+      <Container />
+    </section>
+  );
 };
 export default Home
